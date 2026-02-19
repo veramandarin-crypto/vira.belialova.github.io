@@ -1,3 +1,5 @@
+еще раз, оно все равно делает черные пробелы между фотками
+
 /* Компьютер */
 .video-text-container {
   display: flex;
@@ -30,10 +32,54 @@
 
 /* Мобильные устройства */
 @media (max-width: 768px) {
+
+    body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+  .section {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .section + .section {
+    margin-top: 0 !important; /* чтобы между секциями не было двойного отступа */
+  }
+
+  .section img {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+  }
+  
   .video-text-container {
-    flex-direction: column;
+    flex-direction: column !important;
     width: 100%;
   }
+
+  .photo-gallery {
+    margin: 0;
+    padding: 0;
+    display: block; /* на всякий случай */
+  }
+
+  .photo-gallery img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
 
   .video-side,
   .text-side {
@@ -41,26 +87,30 @@
     flex: none !important;
   }
 
+  /* Контейнер видео без фиксированной высоты */
   .video-wrapper {
     position: relative;
     width: 100% !important;
-    height: auto !important;
+    height: auto !important; /* убираем aspect-ratio */
     margin: 0;
   }
 
+  /* iframe подстраиваем под ширину */
   .video-wrapper iframe {
     width: 100% !important;
-    height: calc(100vw * 9 / 16) !important; /* 16:9 по ширине экрана */
-    min-height: 200px;
+    height: auto !important;
+    min-height: 200px; /* минимальная высота для видимости */
   }
 
+  /* Текст сразу под видео */
   .text-side {
-    margin-top: 0;
+    margin-top: 0; /* почти нет отступа */
     text-align: center;
   }
 
+   /* Текст сразу под видео */
   .text-side h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
+  font-size: 36px;
+  margin-bottom: 15px; /* добавляем пространство под заголовком */
   }
 }
