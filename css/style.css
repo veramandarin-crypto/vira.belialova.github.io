@@ -30,24 +30,25 @@
 
 /* Мобильные устройства */
 @media (max-width: 768px) {
+  
   .video-text-container {
     flex-direction: column !important;
     width: 100%;
   }
 
-   .photo-gallery {
-  margin: 0;
-  padding: 0;
-  display: block; /* на всякий случай */
-}
+  .photo-gallery {
+    margin: 0;
+    padding: 0;
+    display: block; /* на всякий случай */
+  }
 
-.photo-gallery img {
-  width: 100% !important;
-  height: auto !important;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
+  .photo-gallery img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
 
 
   .video-side,
