@@ -30,91 +30,37 @@
 
 /* Мобильные устройства */
 @media (max-width: 768px) {
-
-  /* Секция подстраивается под фото */
-  .section {
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: block;
-    position: relative;
-  }
-
-  /* Картинка на весь экран по ширине, сохраняем пропорции */
-  .section img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Убираем absolute для overlay */
-  .overlay {
-    position: relative;
-    background: rgba(0,0,0,0.35); /* полупрозрачность */
-    width: 100%;
-    height: auto;
-  }
-
-  /* Текст внутри секции */
-  .text-center {
-    position: relative; /* больше не absolute */
-    top: auto;
-    left: auto;
-    transform: none;
-    text-align: center;
-    padding: 20px 10px;
-  }
-
   .video-text-container {
-    flex-direction: column !important;
+    flex-direction: column;
     width: 100%;
   }
 
-  .photo-gallery {
-    margin: 0;
-    padding: 0;
-    display: block; /* на всякий случай */
-  }
-
-  .photo-gallery img {
-    width: 100% !important;
-    height: auto !important;
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  .video-side, .text-side {
+  .video-side,
+  .text-side {
     width: 100% !important;
     flex: none !important;
   }
 
-  /* Контейнер видео без фиксированной высоты */
   .video-wrapper {
     position: relative;
     width: 100% !important;
-    height: auto !important; /* убираем aspect-ratio */
+    height: auto !important;
     margin: 0;
   }
 
-  /* iframe подстраиваем под ширину */
   .video-wrapper iframe {
     width: 100% !important;
-    height: auto !important;
-    min-height: 200px; /* минимальная высота для видимости */
+    height: calc(100vw * 9 / 16) !important; /* 16:9 по ширине экрана */
+    min-height: 200px;
   }
 
-  /* Текст сразу под видео */
   .text-side {
-    margin-top: 0; /* почти нет отступа */
+    margin-top: 0;
     text-align: center;
   }
 
-  /* Заголовок видео + текст */
   .text-side h2 {
     font-size: 36px;
-    margin-bottom: 15px; /* добавляем пространство под заголовком */
+    margin-bottom: 15px;
   }
 }
