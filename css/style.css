@@ -1,1 +1,27 @@
+.video-section {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* чтобы не растягивалось слишком широко на больших экранах */
+  aspect-ratio: 16 / 9; /* вот главное */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+}
 
