@@ -30,33 +30,40 @@
 
 /* Мобильные устройства */
 @media (max-width: 768px) {
+  /* Секция подстраивается под фото */
+  .section {
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block;
+    position: relative;
+  }
 
-    body, html {
+  /* Картинка на весь экран по ширине, сохраняем пропорции */
+  .section img {
+    width: 100%;
+    height: auto;
+    display: block;
     margin: 0;
     padding: 0;
   }
 
-  .section {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .section + .section {
-    margin-top: 0 !important; /* чтобы между секциями не было двойного отступа */
-  }
-
-  .section img {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
+  /* Убираем absolute для overlay */
+  .overlay {
+    position: relative;
+    background: rgba(0,0,0,0.35); /* можно оставить полупрозрачность */
     width: 100%;
     height: auto;
-    object-fit: cover;
   }
 
-  .overlay {
-    position: absolute;
-    inset: 0;
+  /* Текст внутри секции */
+  .text-center {
+    position: relative; /* больше не absolute */
+    top: auto;
+    left: auto;
+    transform: none;
+    text-align: center;
+    padding: 20px 10px;
   }
   
   .video-text-container {
