@@ -31,20 +31,24 @@
 /* Мобильные устройства */
 @media (max-width: 768px) {
 
-  .section {
-    height: auto !important;  /* контейнер подстраивается под фото */
+    body, html {
+    margin: 0;
+    padding: 0;
   }
 
-  /*new parameter to check */
   .section {
-    position: relative;
-    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .section + .section {
+    margin-top: 0 !important; /* чтобы между секциями не было двойного отступа */
   }
 
   .section img {
-    width: 100%;
-    height: auto; /* сохраняем пропорции */
     display: block;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .overlay {
