@@ -42,8 +42,9 @@
 
   .video-wrapper {
     width: 100% !important;
-    aspect-ratio: auto; /* снимаем жесткую 16:9 для мобильного */
+    aspect-ratio: 16 / 9;
     height: auto;
+    margin-bottom: 10px; /* немного пространства под видео */
   }
 
   .video-wrapper iframe {
