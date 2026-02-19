@@ -24,41 +24,36 @@ body {
   overflow-x: hidden;
 }
 
-/* FULLSCREEN SECTIONS */
+/* Секции с фотками */
 .section {
-  position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: auto; /* авто-высота для адаптивности */
+  position: relative;
+  display: block;
 }
 
 .section img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
 }
 
-/* DARK OVERLAY */
+/* overlay */
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  transition: 0.5s ease;
+  position: relative; /* больше не absolute */
+  width: 100%;
+  height: auto;
+  background: rgba(0,0,0,0.35);
 }
 
-.section:hover .overlay {
-  background: rgba(0,0,0,0.25);
-}
-
-/* TEXT OVER IMAGE */
+/* текст */
 .text-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   text-align: center;
-  max-width: 80%;
+  padding: 20px 10px;
+  max-width: 90%;
+  margin: -100px auto 0 auto; /* немного поднимаем текст на фото */
 }
 
 .text-center h1 {
@@ -73,10 +68,11 @@ body {
   font-size: 32px;
 }
 
-/* VIDEO + TEXT SECTION */
+/* Видео + текст */
 .video-text-section {
   width: 100%;
   background: #000;
+  padding: 40px 20px;
 }
 
 .video-text-container {
@@ -85,8 +81,7 @@ body {
   gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .video-side,
@@ -96,13 +91,15 @@ body {
 }
 
 .video-wrapper {
-  position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
+  padding-top: 56.25%; /* 16:9 */
+  position: relative;
 }
 
 .video-wrapper iframe {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
@@ -118,16 +115,6 @@ body {
   line-height: 1.6;
   margin-top: 0;
   opacity: 0.8;
-}
-
-/* PHOTO GALLERY */
-.photo-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0;
-  padding: 0;
-  object-fit: cover;
 }
 
 /* FOOTER */
@@ -150,15 +137,9 @@ footer {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  /* HERO TEXT */
-  .text-center h1 {
-    font-size: 28px;
-  }
-  .text-center h2 {
-    font-size: 20px;
-  }
+  .text-center h1 { font-size: 28px; }
+  .text-center h2 { font-size: 20px; }
 
-  /* VIDEO + TEXT */
   .video-text-container {
     flex-direction: column;
     gap: 20px;
@@ -171,19 +152,7 @@ footer {
   }
 
   .video-wrapper {
-    height: auto !important;
-    width: 100% !important;
-  }
-
-  .video-wrapper iframe {
-    width: 100% !important;
-    height: calc(100vw * 9 / 16) !important; /* 16:9 по ширине экрана */
-    min-height: 200px;
-  }
-
-  .text-side {
-    margin-top: 0;
-    text-align: center;
+    padding-top: calc(100vw * 9 / 16); /* 16:9 по ширине экрана */
   }
 
   .text-side h2 {
@@ -196,13 +165,9 @@ footer {
     line-height: 1.5;
   }
 
-  /* Фотки */
-  .photo-gallery img {
-    width: 100% !important;
-    height: auto !important;
-    display: block;
-    margin: 0;
-    padding: 0;
+  .text-center {
+    margin: -60px auto 0 auto; /* текст чуть выше фото */
+    padding: 15px;
   }
 }
 </style>
@@ -263,7 +228,6 @@ footer {
 
   </div>
 </section>
-
 
 <!-- FOOTER -->
 <footer>
