@@ -183,18 +183,13 @@ footer {
     font-size: 16px;
   }
    
-  .@media (max-width: 768px) {
-  .section {
-    height: auto;
-    min-height: 100vh;
-    padding: 60px 20px;
-  }
-
+ @media (max-width: 768px) {
   .text-center {
-    position: relative;
-    transform: none;
-    top: auto;
-    left: auto;
+    width: 95%;       /* чуть шире, чтобы слова не ломались */
+    max-width: 95%;   /* не обрезаем текст по ширине */
+    padding: 0 10px;  /* немного отступа от краёв экрана */
+    font-size: 16px;  /* можно чуть меньше для длинных абзацев */
+    line-height: 1.6; /* чтобы строки не слипались */
   }
 }
 
