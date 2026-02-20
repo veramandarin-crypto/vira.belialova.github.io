@@ -219,13 +219,13 @@ footer {
   /* Видео + текст вертикально */
   .video-text-container {
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
   }
 
   .video-side,
   .text-side {
-    width: 100%;
-    flex: 0 0 100%;
+    width: 100% !important;
+    flex: none !important;
   }
 
   .text-side {
