@@ -39,6 +39,37 @@ body {
   background: rgba(0,0,0,0.45); /* мобильная база */
   transition: background 0.5s ease;
 }
+/* =========================
+   PHOTO 3 SECTION
+========================= */
+.photo3-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 10%;
+  background: #000;
+}
+
+.photo3-section .photo3-side {
+  flex: 0 0 50%;
+  width: 50%;
+}
+
+.photo3-section .text3-side {
+  flex: 0 0 50%;
+  width: 50%;
+  color: #fff;
+}
+
+.photo3-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
 
 /* Hover только на устройствах с мышкой */
 @media (hover: hover) and (pointer: fine) {
@@ -227,4 +258,22 @@ footer {
   .photo2-section .overlay {
     height: 100%;      /* overlay на всю картинку */
   }
+
+   /* Мобильные устройства */
+  .photo3-section {
+    flex-direction: column; /* вертикально */
+    padding: 30px 5%;
+  }
+
+  .photo3-section .photo3-side,
+  .photo3-section .text3-side {
+    width: 100%;
+    flex: none;
+  }
+
+  .text3-side {
+    text-align: center;
+    margin-top: 20px; /* небольшой отступ под фото */
+  }
+}
 }
