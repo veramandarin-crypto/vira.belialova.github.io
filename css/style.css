@@ -210,9 +210,9 @@ footer {
   }
 
   /* Фото2 показываем полностью */   
-.photo2-section img { 
-   object-fit: contain; 
-   width: 100%; 
-   height: auto; 
-   }
+  .photo2-section img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
 }
