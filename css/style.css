@@ -196,6 +196,11 @@ footer {
     font-size: 16px;  /* можно чуть меньше для длинных абзацев */
     line-height: 1.6; /* чтобы строки не слипались */
   }
-}
 
+ @media (max-width: 768px) {
+  .photo2-section img {
+    object-fit: contain; /* сохраняем весь кадр */
+    width: 100%;
+    height: auto;       /* не обрезаем по высоте */
+  }
 }
