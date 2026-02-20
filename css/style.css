@@ -14,7 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-
 /* =========================
    FULLSCREEN IMAGE SECTIONS
 ========================= */
@@ -39,49 +38,6 @@ body {
   background: rgba(0,0,0,0.45); /* мобильная база */
   transition: background 0.5s ease;
 }
-/* =========================
-   PHOTO 3 SECTION
-========================= */
-.photo3-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 60px 10%;
-  background: #000;
-}
-
-.photo3-section .photo3-side {
-  flex: 0 0 50%;
-  width: 50%;
-}
-
-.photo3-section .text3-side {
-  flex: 0 0 50%;
-  width: 50%;
-  color: #fff;
-}
-
-.photo3-section img {
-  width: 100%;
-  max-height: 600px; /* например */
-  display: block;
-  object-fit: cover;
-}
-
-
-
-/* Hover только на устройствах с мышкой */
-@media (hover: hover) and (pointer: fine) {
-  .overlay {
-    background: rgba(0,0,0,0.8);
-  }
-
-  .section:hover .overlay {
-    background: rgba(0,0,0,0.35);
-  }
-}
-
 
 /* =========================
    TEXT OVER IMAGE
@@ -113,7 +69,6 @@ body {
   line-height: 1.6;
 }
 
-
 /* =========================
    VIDEO + TEXT SECTION
 ========================= */
@@ -139,9 +94,8 @@ body {
 }
 
 /* Зеркальная версия */
-  .video-text-section.reverse .video-text-container {
-    flex-direction: column !important; /* видео сверху, текст снизу */
-  }
+.video-text-section.reverse .video-text-container {
+  flex-direction: row-reverse; /* ПК: видео справа, текст слева */
 }
 
 /* Видео */
@@ -171,6 +125,46 @@ body {
   opacity: 0.85;
 }
 
+/* =========================
+   PHOTO 3 SECTION
+========================= */
+.photo3-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 10%;
+  background: #000;
+}
+
+.photo3-section .photo3-side {
+  flex: 0 0 50%;
+  width: 50%;
+}
+
+.photo3-section .text3-side {
+  flex: 0 0 50%;
+  width: 50%;
+  color: #fff;
+}
+
+.photo3-section img {
+  width: 100%;
+  max-height: 600px; /* ограничиваем высоту */
+  display: block;
+  object-fit: cover;
+}
+
+/* Hover только на устройствах с мышкой */
+@media (hover: hover) and (pointer: fine) {
+  .overlay {
+    background: rgba(0,0,0,0.8);
+  }
+
+  .section:hover .overlay {
+    background: rgba(0,0,0,0.35);
+  }
+}
 
 /* =========================
    FOOTER
@@ -191,7 +185,6 @@ footer {
 .socials a:hover {
   color: #aaa;
 }
-
 
 /* =========================
    MOBILE
@@ -219,7 +212,7 @@ footer {
 
   /* Видео + текст вертикально */
   .video-text-container {
-    flex-direction: column;
+    flex-direction: column !important; /* видео сверху, текст снизу */
     gap: 30px;
   }
 
@@ -243,50 +236,37 @@ footer {
 
   /* Фото2 показываем полностью */   
   .photo2-section img {
-    width: 100%;       /* по ширине экрана */
-    height: 100%;      /* сохраняем пропорции 16:9 */
+    width: 100%;
+    height: 100%;
     display: block;
-    margin: 0;         /* убираем внешние отступы */
-    padding: 0;        /* убираем внутренние отступы */
+    margin: 0;
+    padding: 0;
   }
 
   .photo2-section {
-    height: auto;      /* блок подстраивается под фото */
-    margin: 0;         /* нет отступов сверху/снизу */
+    height: auto;
+    margin: 0;
     padding: 0;
   }
 
   .photo2-section .overlay {
-    height: 100%;      /* overlay на всю картинку */
+    height: 100%;
   }
 
-      /* Мобильные устройства */
-   .photo3-section {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     gap: 40px;
-     padding: 60px 10%;
-     background: #000;
-   }
-   
-   .photo3-section .photo3-side {
-     flex: 0 0 50%;
-     width: 50%;
-   }
-   
-   .photo3-section .photo3-side img {
-     width: 100%;
-     height: auto;         /* сохраняем пропорции */
-     max-height: 500px;    /* ограничиваем высоту */
-     object-fit: cover;    /* центрируем, обрезаем края по необходимости */
-     display: block;
-   }
-   
-   .photo3-section .text3-side {
-     flex: 0 0 50%;
-     width: 50%;
-     color: #fff;
-   }
-   
+  /* PHOTO 3 SECTION на мобилке */
+  .photo3-section {
+    flex-direction: column;
+    padding: 30px 5%;
+  }
+
+  .photo3-section .photo3-side,
+  .photo3-section .text3-side {
+    width: 100%;
+    flex: none;
+  }
+
+  .text3-side {
+    text-align: center;
+    margin-top: 20px;
+  }
 }
