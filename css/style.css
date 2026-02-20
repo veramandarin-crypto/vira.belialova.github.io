@@ -211,6 +211,7 @@ footer {
   }
 
   /* Видео + текст вертикально */
+ @media (max-width: 768px) {
   .video-text-container {
     flex-direction: column !important; /* видео сверху, текст снизу */
     gap: 30px;
