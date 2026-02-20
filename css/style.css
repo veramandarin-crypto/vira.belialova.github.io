@@ -139,8 +139,9 @@ body {
 }
 
 /* Зеркальная версия */
-.video-text-section.reverse .video-text-container {
-  flex-direction: row-reverse;
+  .video-text-section.reverse .video-text-container {
+    flex-direction: column !important; /* видео сверху, текст снизу */
+  }
 }
 
 /* Видео */
