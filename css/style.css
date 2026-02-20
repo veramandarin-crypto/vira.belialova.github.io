@@ -31,19 +31,24 @@ body {
   display: block;
 }
 
-/* OVERLAY */
+/* Базовое overlay */
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.45); /* для мобильных и всех без мышки */
   transition: background 0.5s ease;
 }
 
-/* Только для устройств с мышкой */
+/* Только для устройств с мышкой (компьютер) */
 @media (hover: hover) and (pointer: fine) {
-  .section:hover .overlay {
-    background: rgba(0,0,0,0.35);
+  .overlay {
+    background: rgba(0,0,0,0.8); /* базовая тьма на компе */
   }
+
+  .section:hover .overlay {
+    background: rgba(0,0,0,0.35); /* осветление при hover */
+  }
+}
 
 
 /* TEXT OVER IMAGE */
