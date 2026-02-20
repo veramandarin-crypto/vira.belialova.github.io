@@ -259,20 +259,33 @@ footer {
     height: 100%;      /* overlay на всю картинку */
   }
 
-   /* Мобильные устройства */
-  .photo3-section {
-    flex-direction: column; /* вертикально */
-    padding: 30px 5%;
-  }
-
-  .photo3-section .photo3-side,
-  .photo3-section .text3-side {
-    width: 100%;
-    flex: none;
-  }
-
-  .text3-side {
-    text-align: center;
-    margin-top: 20px; /* небольшой отступ под фото */
-  }
+      /* Мобильные устройства */
+   .photo3-section {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 40px;
+     padding: 60px 10%;
+     background: #000;
+   }
+   
+   .photo3-section .photo3-side {
+     flex: 0 0 50%;
+     width: 50%;
+   }
+   
+   .photo3-section .photo3-side img {
+     width: 100%;
+     height: auto;         /* сохраняем пропорции */
+     max-height: 500px;    /* ограничиваем высоту */
+     object-fit: cover;    /* центрируем, обрезаем края по необходимости */
+     display: block;
+   }
+   
+   .photo3-section .text3-side {
+     flex: 0 0 50%;
+     width: 50%;
+     color: #fff;
+   }
+   
 }
