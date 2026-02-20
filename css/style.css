@@ -209,11 +209,10 @@ footer {
     font-size: 16px;
   }
 
-  /* Фото2 показываем полностью */
+  /* Фото2 показываем полностью */   
   .photo2-section img {
-    object-fit: contain;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
-
 }
