@@ -210,16 +210,9 @@ footer {
   }
 
   /* Фото2 показываем полностью */   
- .photo2-section {
-    height: 100vh;      /* секция на весь экран телефона */
-    margin: 0;
-    padding: 0;
-  }
-
-  .photo2-section img {
-    width: 100%;
-    height: 100%;       /* растянуть на всю высоту секции */
-    object-fit: cover;  /* заполнение без черных промежутков */
-    display: block;
-  }
+.photo2-section img { 
+   object-fit: contain; 
+   width: 100%; 
+   height: auto; 
+   }
 }
