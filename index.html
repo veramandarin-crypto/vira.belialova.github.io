@@ -409,24 +409,29 @@ We leave this place alive  so that we can return — and continue living.
 
 <!-- JS for 12th photo - split section --> 
 <script>
-      const modal = document.getElementById('donateModal');
-      const btn = document.getElementById('donateBtn');
-      const close = document.getElementById('closeModal');
-      
-      btn.onclick = () => {
-        modal.style.display = 'flex';
-      };
-      
-      close.onclick = () => {
-        modal.style.display = 'none';
-      };
-      
-      window.onclick = (e) => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      };
+document.addEventListener("scroll", function() {
+
+  const section = document.querySelector(".split-photo-section");
+  const slices = document.querySelectorAll(".slice");
+
+  const rect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // прогресс появления (0 → 1)
+  let progress = 1 - (rect.top / windowHeight);
+  progress = Math.min(Math.max(progress, 0), 1);
+
+  // каждая полоса появляется по очереди
+  slices.forEach((slice, index) => {
+    const delay = index * 0.2;
+    let sliceProgress = (progress - delay) * 2;
+    sliceProgress = Math.min(Math.max(sliceProgress, 0), 1);
+    slice.style.opacity = 1 - sliceProgress;
+  });
+
+});
 </script>
+
 
 
 
