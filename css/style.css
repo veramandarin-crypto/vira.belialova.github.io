@@ -80,6 +80,17 @@ body {
   cursor: pointer;
 }
 
+.nav-links a,
+.burger {
+  outline: none;
+}
+
+.nav-links a:focus,
+.burger:focus {
+  outline: none;
+}
+
+
 /* ===== АДАПТИВ ===== */
 @media (max-width: 768px) {
   .nav-links {
