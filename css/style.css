@@ -315,6 +315,21 @@ body {
   display: block;
 }
 
+.split-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.split-photo img {
+  position: relative;
+  z-index: 1;
+}
+
+.slice {
+  position: absolute;
+  z-index: 2;
+}
+
 /* Чёрные маски */
 .slice {
   position: absolute;
