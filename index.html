@@ -445,21 +445,26 @@ window.onclick = (e) => {
 
  <!-- JS FOR BURGER LOGIC --> 
 <script>
-const burger = document.getElementById('burgerBtn');
-const nav = document.getElementById('navLinks');
+let lastScroll = 0;
+const nav = document.querySelector('.main-nav');
 
-burger.onclick = (e) => {
-  e.stopPropagation();
-  nav.classList.toggle('open');
-};
+window.addEventListener('scroll', () => {
+  const current = window.pageYOffset;
 
-// закрытие при клике вне
-document.addEventListener('click', (e) => {
-  if (!nav.contains(e.target) && e.target !== burger) {
-    nav.classList.remove('open');
+  if (current > lastScroll + 10) {
+    // скроллим вниз → прячем
+    nav.style.transform = 'translate(-50%, -120%)';
+    nav.style.opacity = '0';
+  } else {
+    // вверх → показываем
+    nav.style.transform = 'translate(-50%, 0)';
+    nav.style.opacity = '1';
   }
+
+  lastScroll = current;
 });
 </script>
+
 
   
 
