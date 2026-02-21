@@ -171,6 +171,26 @@ body {
 }
 
 /* =========================
+   PHOTO 4 SECTION 3х3
+========================= */
+.photo4-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  height: 100vh;
+}
+
+.photo4-section img {
+  max-width: 100%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* ключевое */
+}
+
+
+/* =========================
    FULLSCREEN VIDEO
 ========================= */
 .video-full-section {
@@ -368,4 +388,11 @@ footer {
     text-align: center;
     margin-top: 20px;
   }
+@media (max-width: 768px) {
+  .photo4-section img {
+    max-height: 85vh;
+  }
+}
+
+    
 }
