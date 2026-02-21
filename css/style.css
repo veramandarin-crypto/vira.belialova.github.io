@@ -499,24 +499,29 @@ footer {
   padding: 40px;
   text-align: center;
 }
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 
 .socials a {
   color: #fff;
-  margin: 0 15px;
   font-size: 22px;
   transition: 0.3s ease;
-  display: inline-flex;
-  justify-content: center;
-  gap: 20px;
+  text-decoration: none;
+  line-height: 1; /* ВАЖНО */
+}
 
-  text-decoration: none; /* <--- убирает подчёркивание */
+.socials a i {
+  display: block; /* убирает inline baseline-линию */
 }
 .socials a:hover {
   color: #aaa;
 }
-.socials a {
-  text-decoration: none !important;
-}
+
 
 /* =========================
    MOBILE
