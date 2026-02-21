@@ -294,7 +294,7 @@ We leave this place alive  so that we can return — and continue living.
 
 
 <!-- FULL SCREEN To Stay Alive -->
-<section class="video-full-section">
+<section class="video-full-section fade-in">
   <div class="video-wrapper">
     <iframe 
       src="https://www.youtube.com/embed/af9LQlVuUPk?si=Qg-hnSUiRVCBR7mv"
@@ -320,7 +320,23 @@ We leave this place alive  so that we can return — and continue living.
     controls: ['play-large','play','progress','mute','volume','fullscreen']
   });
 </script>
-  
+
+<!-- JS FOR FADE IN -->  
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
