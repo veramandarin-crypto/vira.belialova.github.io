@@ -57,6 +57,52 @@ body {
   color: #000;
 }
 
+/* MODAL BACKDROP */
+.donate-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENT */
+.donate-modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+/* CLOSE */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* QR */
+.donation-qr {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin: 15px auto;
+  display: block;
+}
+
+.donation-note {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
 /* =========================
    FULLSCREEN SECTIONS
 ========================= */
