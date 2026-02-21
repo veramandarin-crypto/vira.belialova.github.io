@@ -27,7 +27,6 @@ body {
 /* =========================
   NAVIGATION
 ========================= */
-/* NAVIGATION */
 .main-nav {
   position: fixed;
   top: 20px;
@@ -49,10 +48,10 @@ body {
   cursor: pointer;
 }
 
-/* кнопки */
+/* кнопки (только кнопки, без контейнера) */
 .nav-links {
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
+  gap: 6px;
 }
 
 .nav-links a {
@@ -66,7 +65,6 @@ body {
   letter-spacing: 1px;
   border-radius: 20px;
   transition: all 0.4s ease;
-  margin: 0 4px;
 }
 
 .nav-links a:hover {
@@ -85,11 +83,11 @@ body {
   .nav-links {
     display: none;
     flex-direction: column;
+    gap: 8px;
   }
 
   .nav-links a {
-    margin: 4px 0;
-    width: 160px;           /* опционально: одинаковая ширина */
+    width: 160px;          /* опционально: одинаковая ширина */
     text-align: center;
   }
 
@@ -101,32 +99,6 @@ body {
     display: flex;
   }
 }
-
-
-
-/* ===== АДАПТИВ ===== */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    border-radius: 12px;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.9);
-  }
-
-  .nav-links a {
-    margin: 4px 0;
-  }
-
-  .burger {
-    display: inline-block;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-}
-
 
 
 
