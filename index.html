@@ -389,48 +389,50 @@ We leave this place alive  so that we can return — and continue living.
   });
 </script>
 
-<!-- JS for 12th photo - split section -->  
+<!-- JS FOR SPLIT PHOTO --> 
 <script>
-  const slices = document.querySelectorAll('.slice');
-  const splitSection = document.querySelector('.split-photo-section');
-
-  if (splitSection) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          slices.forEach(slice => slice.classList.add('visible'));
-        }
-      });
-    }, { threshold: 0.25 });
-
-    observer.observe(splitSection);
-  }
-</script>
-
-<!-- JS for 12th photo - split section --> 
-<script>
-document.addEventListener("scroll", function() {
-
-  const section = document.querySelector(".split-photo-section");
+document.addEventListener("DOMContentLoaded", function() {
   const slices = document.querySelectorAll(".slice");
+  const section = document.querySelector(".split-photo-section");
 
-  const rect = section.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        slices.forEach(slice => {
+          slice.classList.add("visible");
+        });
+      }
+    });
+  }, { threshold: 0.4 });
 
-  // прогресс появления (0 → 1)
-  let progress = 1 - (rect.top / windowHeight);
-  progress = Math.min(Math.max(progress, 0), 1);
-
-  // каждая полоса появляется по очереди
-  slices.forEach((slice, index) => {
-    const delay = index * 0.2;
-    let sliceProgress = (progress - delay) * 2;
-    sliceProgress = Math.min(Math.max(sliceProgress, 0), 1);
-    slice.style.opacity = 1 - sliceProgress;
-  });
-
+  observer.observe(section);
 });
 </script>
+
+
+  <!-- JS FOR DONATION --> 
+<script>
+  const modal = document.getElementById('donateModal');
+const btn = document.getElementById('donateBtn');
+const close = document.getElementById('closeModal');
+
+btn.onclick = () => {
+  modal.style.display = 'flex';
+};
+
+close.onclick = () => {
+  modal.style.display = 'none';
+};
+
+window.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
+</script>
+
+
 
 
 
