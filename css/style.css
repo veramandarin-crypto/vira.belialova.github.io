@@ -138,7 +138,7 @@ body {
 }
 
 .text-center p {
-  margin: 1em 0;
+  margin: 0.9em 0;
   line-height: 1.6;
 }
 
@@ -388,9 +388,8 @@ footer {
 @media (max-width: 768px) {
 
   .text-center {
-    width: 95%;
-    max-width: 95%;
-    padding: 0 10px;
+    max-width: 88%;
+    padding: 0;
   }
 
   .text-center h1 { font-size: 28px; }
