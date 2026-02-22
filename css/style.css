@@ -14,11 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
 .main-nav {
   position: fixed;
   top: 20px;
@@ -28,120 +23,24 @@ body {
   text-align: center;
 }
 
-/* BURGER */
-.burger {
-  display: none;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* DESKTOP NAV */
-.nav-links {
-  display: flex;
-  gap: 6px;
-}
-
-.nav-links a {
-  display: inline-block;
-  padding: 8px 18px;
-  border: 1px solid #fff;
-  background: transparent;
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 1px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  background: #fff;
-  color: #000;
-}
-
-.nav-links a:visited {
-  color: #fff;
-}
-
-.nav-links a,
-.burger {
-  outline: none;
-}
-
 
 /* =========================
-   MOBILE NAVIGATION
+ PAGE PRESENCE
 ========================= */
-
-@media (max-width: 768px) {
-
-  .burger {
-    display: inline-block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 8px;
-
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    align-items: center;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    width: 170px;
-    text-align: center;
-
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 24px;
-    padding: 10px 16px;
-
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .nav-links a:visited {
-    color: #fff;
-  }
-
-  .nav-links a:active {
-    background: rgba(255,255,255,0.15);
-  }
-
-}
-
-
-/* =========================
-   PRESENCE PAGE LAYOUT
-========================= */
-
+/* PRESENCE LAYOUT */
 .presence-content {
   background: #000;
 }
 
+/* основной контейнер */
 .presence-content > div {
   max-width: 800px;
-  margin-left: 12%;
+  margin-left: 12%;   /* сдвигаем влево красиво */
   margin-right: auto;
-  padding: 160px 0 120px;
+  padding: 160px 0 120px; /* больше воздуха сверху и снизу */
 }
 
+/* отступы между секциями */
 .presence-content h2 {
   margin-top: 100px;
   margin-bottom: 30px;
@@ -157,14 +56,16 @@ body {
   line-height: 1.9;
   margin-bottom: 40px;
   font-size: 16px;
-  max-width: 650px;
+  max-width: 650px; /* чтобы строки не были слишком длинные */
 }
 
+/* grid блоки */
 .presence-grid {
   margin: 60px 0;
   max-width: 650px;
 }
 
+/* --- MOBILE --- */
 @media (max-width: 900px) {
   .presence-content > div {
     margin: 0 auto;
@@ -178,16 +79,505 @@ body {
 }
 
 
+
+
+/* =========================
+  NAVIGATION
+========================= */
+.main-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  text-align: center;
+}
+
+/* бургер */
+.burger {
+  display: none;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* кнопки (только кнопки, без контейнера) */
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.nav-links a:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* убираем фокус-бордер */
+.nav-links a,
+.burger {
+  outline: none;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+
+    position: absolute;
+    top: 60px; /* ← регулируй если нужно */
+    right: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 160px;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 24px;
+    padding: 10px 16px;
+
+    transition: all 0.2s ease;
+  }
+
+  .nav-links a:active {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  .burger {
+    display: inline-block;
+  }
+
+}
+
+
+
+
+/* =========================
+   DONATION SECTION
+========================= */
+.support-section {
+  padding: 140px 10%;
+  text-align: center;
+  background: #000;
+}
+
+.support-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.support-content h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.support-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.donate-button {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+}
+
+.donate-button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* MODAL BACKDROP */
+.donate-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENT */
+.donate-modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+/* CLOSE */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* QR */
+.donation-qr {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin: 15px auto;
+  display: block;
+}
+
+.donation-note {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
+/* =========================
+   FULLSCREEN SECTIONS
+========================= */
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  transition: 0.5s ease;
+}
+
+.section:hover .overlay {
+  background: rgba(0,0,0,0.25);
+}
+
+
+/* Hover (только для мышки) */
+@media (hover: hover) and (pointer: fine) {
+  .overlay {
+    background: rgba(0,0,0,0.5);
+  }
+
+  .section:hover .overlay {
+    background: rgba(0,0,0,0.25);
+  }
+}
+
+/* =========================
+   FADE-IN
+========================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   TEXT OVER IMAGE
+========================= */
+.text-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 80%;
+  z-index: 2;
+}
+
+.text-center h1 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 48px;
+}
+
+.text-center h2 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 32px;
+}
+
+.text-center p {
+  margin: 0.9em 0;
+  line-height: 1.6;
+}
+
+/* =========================
+   VIDEO + TEXT SECTION
+========================= */
+.video-text-section {
+  width: 100%;
+  background: #000;
+  padding: 100px 10%;
+}
+
+.video-text-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.video-side,
+.text-side {
+  flex: 0 0 50%;
+  width: 50%;
+}
+
+/* Зеркальная версия (ПК) */
+.video-text-section.reverse .video-text-container {
+  flex-direction: row-reverse;
+}
+
+/* Видео */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Текст */
+.text-side h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.text-side p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* =========================
+   PHOTO 3 SECTION
+========================= */
+.photo3-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 10%;
+  background: #000;
+}
+
+.photo3-section .photo3-side,
+.photo3-section .text3-side {
+  flex: 0 0 50%;
+  width: 50%;
+}
+
+.photo3-section img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   PHOTO 4 SECTION (contain)
+========================= */
+.photo4-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  height: 100vh;
+}
+
+.photo4-section img {
+  max-width: 100%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================
+   SPLIT PHOTO 12
+========================= */
+
+.split-photo-section {
+  min-height: 120vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-photo {
+  position: relative;
+  width: 90vw;
+  max-width: 900px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden; /* важно */
+}
+
+.split-photo img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  z-index: 1;
+}
+
+/* Чёрные маски */
+.slice {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: #000;
+  pointer-events: none;
+
+  transition: transform 1s ease, opacity 1s ease;
+  z-index: 2;
+}
+
+.slice1 { top: 0%; }
+.slice2 { top: 25%; }
+.slice3 { top: 50%; }
+.slice4 { top: 75%; }
+
+/* когда JS добавляет visible — маска уезжает вверх */
+.slice.visible {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+
+
+/* =========================
+   FULLSCREEN VIDEO
+========================= */
+.video-full-section {
+  width: 100%;
+  background: #000;
+  padding: 0;
+}
+
+.video-full-section .video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-full-section .video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* =========================
+   TWO VIDEOS SIDE BY SIDE
+========================= */
+.video-two-section {
+  width: 100%;
+  background: #000;
+  padding: 100px 10%;
+}
+
+.video-two-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.video-two-container .video-side {
+  flex: 0 0 50%;
+  width: 50%;
+}
+
+.video-two-container .video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-two-container .video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* =========================
    FOOTER
 ========================= */
-
 footer {
   background: #000;
   padding: 40px;
   text-align: center;
 }
-
 .socials {
   display: flex;
   justify-content: center;
@@ -195,18 +585,100 @@ footer {
   gap: 30px;
 }
 
+
 .socials a {
   color: #fff;
   font-size: 22px;
-  text-decoration: none;
-  line-height: 1;
   transition: 0.3s ease;
+  text-decoration: none;
+  line-height: 1; /* ВАЖНО */
 }
 
 .socials a i {
-  display: block;
+  display: block; /* убирает inline baseline-линию */
 }
-
 .socials a:hover {
   color: #aaa;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .text-center {
+    width: 95%;
+    max-width: 95%;
+    padding: 0 10px;
+  }
+
+  .text-center h1 { font-size: 28px; }
+  .text-center h2 { font-size: 20px; }
+  .text-center p  { font-size: 16px; }
+
+  /* Видео + текст */
+  .video-text-container {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .video-side,
+  .text-side {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  .text-side {
+    text-align: center;
+  }
+
+  .text-side h2 { font-size: 28px; }
+  .text-side p  { font-size: 16px; }
+
+  /* Фото2 */
+  .photo2-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .photo2-section {
+    height: auto;
+  }
+
+  .photo2-section .overlay {
+    height: 100%;
+  }
+
+  /* Фото3 */
+  .photo3-section {
+    flex-direction: column;
+    padding: 30px 5%;
+  }
+
+  .photo3-section .photo3-side,
+  .photo3-section .text3-side {
+    width: 100%;
+    flex: none;
+  }
+
+  .text3-side {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Фото4 */
+  .photo4-section img {
+    max-height: 85vh;
+  }
+
+  /* Видео два */
+  .video-two-container {
+    flex-direction: column;
+  }
+
+  .video-two-container .video-side {
+    width: 100%;
+  }
 }
