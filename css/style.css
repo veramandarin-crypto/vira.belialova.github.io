@@ -301,7 +301,7 @@ body {
   color: #000;
 }
 
-.tab-btn:hover {
+.tab-btn:not(.active):hover {
   background: rgba(255,255,255,0.15);
 }
 
