@@ -106,34 +106,47 @@ body {
 }
 
 /* кнопки (только кнопки, без контейнера) */
-.nav-links {
-  display: flex;
-  gap: 6px;
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+
+    position: absolute;
+    top: 60px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    align-items: center;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 160px;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 24px;
+    padding: 10px 16px;
+
+    transition: all 0.2s ease;
+  }
+
+  .burger {
+    display: inline-block;
+  }
+
 }
 
-.nav-links a {
-  display: inline-block;
-  padding: 8px 18px;
-  border: 1px solid #fff;
-  background: transparent;
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 1px;
-  border-radius: 20px;
-  transition: all 0.4s ease;
-}
-
-.nav-links a:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* убираем фокус-бордер */
-.nav-links a,
-.burger {
-  outline: none;
-}
 
 /* ===== АДАПТИВ ===== */
 @media (max-width: 768px) {
