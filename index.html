@@ -353,19 +353,48 @@ We leave this place alive  so that we can return — and continue living.
 <!-- MODAL -->
 <div id="donateModal" class="donate-modal" role="dialog" aria-modal="true" aria-label="Donation information">
   <div class="donate-modal-content">
+
     <span id="closeModal" class="close-modal" aria-label="Close donation window">&times;</span>
 
-    <h2>Donate</h2>
+    <h2>Support the Project</h2>
 
-    <p>Monobank (UA)</p>
-    <img src="images/qr-monobank.png" alt="Monobank QR code" class="donation-qr" loading="lazy">
+    <!-- TABS -->
+    <div class="donate-tabs">
+      <button class="tab-btn active" data-tab="paypal">PayPal</button>
+      <button class="tab-btn" data-tab="crypto">USDT (crypto)</button>
+      <button class="tab-btn" data-tab="card">Bank Card</button>
+    </div>
 
-    <p class="donation-note">
-      Card: 0000 0000 0000 0000<br>
-      Name: Your Name
-    </p>
+    <!-- TAB CONTENTS -->
+    <div class="tab-content active" id="paypal">
+      <p>PayPal</p>
+      <a href="paypal.me/ViraBelialova" target="_blank" class="donate-link">
+        Donate via PayPal
+      </a>
+      <p class="donation-note">
+        You can pay with PayPal account or card.
+      </p>
+    </div>
+
+    <div class="tab-content" id="crypto">
+      <p>USDT (TRC20)</p>
+      <img src="images/qr-usdt.png" alt="USDT QR code" class="donation-qr" loading="lazy">
+      <p class="donation-note">
+        Wallet: TRC20_ADDRESS_HERE
+      </p>
+    </div>
+
+    <div class="tab-content" id="card">
+      <p>Bank Card</p>
+      <p class="donation-note">
+        Card: XXXX XXXX XXXX XXXX<br>
+        Name: Your Name
+      </p>
+    </div>
+
   </div>
 </div>
+
 
 
 
@@ -447,7 +476,18 @@ window.onclick = (e) => {
     modal.style.display = 'none';
   }
 };
+</script>
 
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
 </script>
 
 
