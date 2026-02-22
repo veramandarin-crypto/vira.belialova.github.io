@@ -137,25 +137,47 @@ body {
 
 /* ===== АДАПТИВ ===== */
 @media (max-width: 768px) {
+
   .nav-links {
     display: none;
     flex-direction: column;
     gap: 8px;
+
+    position: absolute;
+    top: 60px; /* ← регулируй если нужно */
+    right: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
   }
 
   .nav-links a {
-    width: 160px;          /* опционально: одинаковая ширина */
+    width: 160px;
     text-align: center;
+
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 24px;
+    padding: 10px 16px;
+
+    transition: all 0.2s ease;
+  }
+
+  .nav-links a:active {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.6);
   }
 
   .burger {
     display: inline-block;
   }
 
-  .nav-links.open {
-    display: flex;
-  }
 }
+
 
 
 
