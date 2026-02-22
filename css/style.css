@@ -138,6 +138,10 @@ body {
   gap: 8px;
   margin-top: 10px;
 }
+.tab-content p {
+  margin-bottom: 10px;
+}
+
 
 
 
