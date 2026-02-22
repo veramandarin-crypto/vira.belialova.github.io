@@ -350,6 +350,7 @@ body {
 /* TAB CONTENT */
 .tab-content {
   display: none;
+  text-align: center;
 }
 
 .tab-content.active {
@@ -386,6 +387,8 @@ body {
   font-size: 14px;
   opacity: 0.7;
 }
+
+
 
 
 /* =========================
