@@ -113,6 +113,8 @@ body {
   font-size: 13px;
   cursor: pointer;
   transition: 0.2s;
+  min-width: 140px;          
+  text-align: center;
 }
 
 .copy-btn:hover,
@@ -135,6 +137,7 @@ body {
 .donate-actions {
   display: flex;
   flex-direction: column;
+  align-item: center;
   gap: 8px;
   margin-top: 10px;
 }
@@ -200,7 +203,7 @@ body {
 
     position: absolute;
     top: 60px; /* ← регулируй если нужно */
-    left: 50%;              /* центр относительно nav */
+    left: 50%; /* центр относительно nav */
     transform: translateX(-50%);
      
     align-items: center;
