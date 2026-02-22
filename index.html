@@ -371,20 +371,28 @@ We leave this place alive  so that we can return — and continue living.
       <a href="https://paypal.me/ViraBelialova" target="_blank" class="donate-link">
         Donate via PayPal
       </a>
-      <p class="donation-note">
+      <p class="donation-note" style="margin-top:8px;">
         You can pay with PayPal account or card.
       </p>
     </div>
 
-    <div class="tab-content" id="crypto">
-  <p>USDT (TRC20)</p>
+    
+  <div class="tab-content" id="crypto">
 
-  <img src="images/qr-usdt.JPG" alt="USDT QR code" class="donation-qr" loading="lazy">
+  <!-- QR clickable -->
+  <div class="qr-copy" id="qrCopy">
+    <img src="images/qr-usdt.JPG" alt="USDT QR code" class="donation-qr" loading="lazy">
+  </div>
 
-  <p class="donation-note">
-    Wallet (TRC20):<br>
+  <!-- show wallet -->
+  <button class="show-wallet" id="showWallet">Show wallet</button>
+
+  <p class="donation-note wallet-address" id="walletAddress" style="display:none;">
     TLg3NrPEcMphcXSrAWVdmLc9QmAhAwKJ5G
   </p>
+
+  <!-- copy button -->
+  <button class="copy-btn" id="copyWallet">Copy wallet</button>
 
   <p class="donation-note" style="margin-top:8px; opacity:0.9;">
     Make sure the network is TRC20.
@@ -546,6 +554,38 @@ function copyWallet() {
   alert("Wallet address copied");
 }
 </script>
+
+<!-- JS USDT COPY TOGGLE --> 
+<script>
+const wallet = "TLg3NrPEcMphcXSrAWVdmLc9QmAhAwKJ5G";
+
+const copyBtn = document.getElementById('copyWallet');
+const qrCopy = document.getElementById('qrCopy');
+const showWallet = document.getElementById('showWallet');
+const walletAddress = document.getElementById('walletAddress');
+
+function copyWalletFn() {
+  navigator.clipboard.writeText(wallet).then(() => {
+    copyBtn.textContent = "Copied ✓";
+    copyBtn.classList.add('copied');
+
+    setTimeout(() => {
+      copyBtn.textContent = "Copy wallet";
+      copyBtn.classList.remove('copied');
+    }, 1500);
+  });
+}
+
+copyBtn.onclick = copyWalletFn;
+qrCopy.onclick = copyWalletFn;
+
+showWallet.onclick = () => {
+  const visible = walletAddress.style.display === "block";
+  walletAddress.style.display = visible ? "none" : "block";
+  showWallet.textContent = visible ? "Show wallet" : "Hide wallet";
+};
+</script>
+
 
 
 </body>
