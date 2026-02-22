@@ -96,6 +96,34 @@ body {
   border-radius: 4px; /* опционально, если хочешь мягкие края */
 }
 
+.qr-copy {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* CRYPTO COPY BUTTON */
+.copy-btn,
+.show-wallet {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 18px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.copy-btn:hover,
+.show-wallet:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.copy-btn.copied {
+  background: #fff;
+  color: #000;
+}
 
 
 
