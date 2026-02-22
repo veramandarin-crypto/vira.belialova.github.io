@@ -124,6 +124,20 @@ body {
   background: #fff;
   color: #000;
 }
+.tab-content {
+  display: none;
+  text-align: center;
+}
+
+.tab-content.active {
+  display: block;
+}
+.donate-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
 
 
 
