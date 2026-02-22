@@ -378,12 +378,23 @@ We leave this place alive  so that we can return — and continue living.
 
     <div class="tab-content" id="crypto">
       <p>USDT (TRC20)</p>
-      <img src="images/qr-usdt.JPG" alt="USDT QR code" class="donation-qr" loading="lazy">
-      <p class="donation-note">
-        Wallet: TLg3NrPEcMphcXSrAWVdmLc9QmAhAwKJ5G
-      </p>
-    </div>
+      <img src="images/qr-usdt.JPG" alt="USDT QR code" class="donation-qr" loading="lazy">  
+      <div class="wallet-row">
+      <code id="walletAddress">
+        TLg3NrPEcMphcXSrAWVdmLc9QmAhAwKJ5G
+    </code>
 
+    <button onclick="copyWallet()" class="copy-btn">
+      Copy
+    </button>
+  </div>
+
+  <p class="network-note">
+    Network: TRC20
+  </p>
+</div>
+
+    
     <div class="tab-content" id="card">
       <p>Bank Card</p>
       <p class="donation-note">
@@ -527,6 +538,17 @@ document.addEventListener('click', (e) => {
   }
 });
 </script>
+
+<!-- JS USDT LOGIC --> 
+  <script>
+function copyWallet() {
+  const text = document.getElementById("walletAddress").innerText.trim();
+  navigator.clipboard.writeText(text);
+
+  alert("Wallet address copied");
+}
+</script>
+
 
 </body>
 </html>
