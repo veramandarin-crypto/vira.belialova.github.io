@@ -145,7 +145,10 @@ body {
 
     position: absolute;
     top: 60px; /* ← регулируй если нужно */
-    right: 0;
+    left: 50%;              /* центр относительно nav */
+    transform: translateX(-50%);
+     
+    align-items: center;
   }
 
   .nav-links.open {
