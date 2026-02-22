@@ -78,6 +78,20 @@ body {
   }
 }
 
+/* PRESENCE PHOTO */
+.presence-visual {
+  margin: 80px 0;
+  width: 100%;
+}
+
+.presence-visual img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px; /* опционально, если хочешь мягкие края */
+}
+
 
 
 
