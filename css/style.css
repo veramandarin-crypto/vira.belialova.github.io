@@ -137,7 +137,7 @@ body {
 .donate-actions {
   display: flex;
   flex-direction: column;
-  align-item: center;
+  align-items: center;
   gap: 8px;
   margin-top: 10px;
 }
