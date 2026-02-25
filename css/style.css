@@ -27,6 +27,26 @@ body {
   scroll-margin-top: 160px;
 }
 
+
+/* =========================
+ VIDEO-VERTICAL
+========================= */
+/* вертикальный стиль — только для этого видео */
+.vertical-video {
+  aspect-ratio: 9 / 16;
+  max-width: 420px;          /* чтобы не растягивалось на всю ширину */
+  margin: 0 auto;            /* центрируем */
+}
+
+/* на ПК можно вернуть обычный формат */
+@media (min-width: 769px) {
+  .vertical-video {
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+  }
+}
+
+
 /* =========================
  PAGE PRESENCE VIDEO
 ========================= */
