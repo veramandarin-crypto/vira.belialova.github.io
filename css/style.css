@@ -53,6 +53,9 @@ body {
 /* PRESENCE LAYOUT */
 .presence-content {
   background: #000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
 }
 
 /* основной контейнер */
@@ -80,6 +83,10 @@ body {
   margin-bottom: 40px;
   font-size: 16px;
   max-width: 650px; /* чтобы строки не были слишком длинные */
+}
+
+.presence-content.active {
+  max-height: 1200px; /* хватит для видео */
 }
 
 /* grid блоки */
