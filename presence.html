@@ -61,6 +61,17 @@
       <div>Visual Narrative</div>
     </div>
 
+    <video 
+      class="presence-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      id="forestVideo">
+    <source src="videos/video.MP4" type="video/mp4">
+  </video>
+
+    
     <p>
       I work at the intersection of movement and meaning — but without reducing identity to labels.<br>
       It is about presence.
@@ -138,6 +149,16 @@ document.addEventListener('click', (e) => {
   }
 });
 </script>
+
+
+<script>
+  const video = document.getElementById("forestVideo");
+  
+  video.addEventListener("click", () => {
+    video.muted = false;
+  });
+</script>
+
 
 </body>
 </html>
