@@ -152,12 +152,13 @@ document.addEventListener('click', (e) => {
 
 
 <script>
-  const video = document.getElementById("forestVideo");
-  
-  video.addEventListener("click", () => {
-    video.muted = false;
-  });
+const video = document.getElementById("forestVideo");
+
+video.addEventListener("click", () => {
+  video.muted = !video.muted; // переключает true ↔ false
+});
 </script>
+
 
 
 </body>
