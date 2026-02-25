@@ -55,12 +55,6 @@
       Visual storytelling became a way to capture presence — not just aesthetics, but energy.
     </p>
 
-    <div class="presence-grid">
-      <div>Performance</div>
-      <div>Body Work</div>
-      <div>Visual Narrative</div>
-    </div>
-
     <video 
       class="presence-video"
       autoplay
@@ -76,6 +70,33 @@
       I work at the intersection of movement and meaning — but without reducing identity to labels.<br>
       It is about presence.
     </p>
+
+<div class="presence-grid">
+
+  <div class="presence-item">Performance</div>
+  <div class="presence-content">
+    <video class="presence-video" autoplay muted loop playsinline>
+      <source src="videos/video2.MP4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="presence-item">Body Work</div>
+  <div class="presence-content">
+    <video class="presence-video" autoplay muted loop playsinline>
+      <source src="videos/video3.MP4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="presence-item">Visual Narrative</div>
+  <div class="presence-content">
+    <video class="presence-video" autoplay muted loop playsinline>
+      <source src="videos/video4.MP4" type="video/mp4">
+    </video>
+  </div>
+
+</div>
+
+
 
     <h2>03 — Why It Matters</h2>
     <p>
@@ -158,6 +179,14 @@ video.addEventListener("click", () => {
   video.muted = !video.muted; // переключает true ↔ false
 });
 </script>
+
+<script>
+  document.querySelectorAll('.presence-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.nextElementSibling.classList.toggle('active');
+  });
+});
+</script>  
 
 
 
