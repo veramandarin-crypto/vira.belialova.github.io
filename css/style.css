@@ -86,6 +86,7 @@ body {
 
 .presence-content.active {
   max-height: 1200px; /* хватит для видео */
+  display: block;
 }
 
 /* grid блоки */
