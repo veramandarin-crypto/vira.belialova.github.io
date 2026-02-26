@@ -28,6 +28,19 @@ body {
 }
 
 /* =========================
+ THANK TEXT
+========================= */
+.thank-text {
+  max-width: 700px;
+  margin: 40px auto 0;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+
+/* =========================
   BACK TO TOP BUTTON
 ========================= */
 #backToTop {
