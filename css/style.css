@@ -1,39 +1,18 @@
 /* =========================
    BASE
 ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Garet', sans-serif;
-}
-
-body {
-  background: #000;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-.main-nav {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  text-align: center;
-}
-
-.support-section {
-  scroll-margin-top: 160px;
-}
-
-
-/* ONLY FOR THANK SECTION */
+/* =========================
+   THANK SECTION
+========================= */
 .thank-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: #000;
 }
 
+/* TEXT BLOCK */
 .thank-section .thank-text {
   max-width: 650px;
   margin: 50px auto 120px;
@@ -46,17 +25,19 @@ body {
 
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: opacity 1s ease, transform 1s ease;
 
-  z-index: 3;
+  pointer-events: none;
 }
 
+/* WHEN VISIBLE (JS ADD CLASS 'visible') */
 .thank-section .thank-text.visible {
   opacity: 0.9;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
-/* MOBILE ONLY FOR THIS SECTION */
+/* MOBILE ADAPTATION */
 @media (max-width: 768px) {
   .thank-section .thank-text {
     max-width: 88%;
