@@ -870,9 +870,14 @@ footer {
 @media (max-width: 768px) {
 
   .text-center {
-    width: 95%;
-    max-width: 95%;
-    padding: 0 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 90%;
+    text-align: center;
+    z-index: 3;
   }
 
   .text-center h1 { font-size: 28px; }
@@ -898,19 +903,30 @@ footer {
   .text-side h2 { font-size: 28px; }
   .text-side p  { font-size: 16px; }
 
-  /* Фото2 */
+   /* --- FULLSCREEN Photo remain FULLSCREEN --- */
+  .section {
+    min-height: 100svh;
+    height: 100svh;
+  }
+ 
+   /* PHOTO 2 Fixed height */
+  .photo2-section {
+    position: relative;
+    min-height: 100svh;
+    height: 100svh;
+  }
+
+ 
   .photo2-section img {
     width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .photo2-section {
-    height: auto;
-  }
-
-  .photo2-section .overlay {
     height: 100%;
+    object-fit: cover;
+  }
+
+  /* Overlay точно перекрывает */
+  .photo2-section .overlay {
+    position: absolute;
+    inset: 0;
   }
 
   /* Фото3 */
