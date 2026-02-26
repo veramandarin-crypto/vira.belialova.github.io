@@ -28,6 +28,46 @@ body {
 }
 
 
+/* ONLY FOR THANK SECTION */
+.thank-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.thank-section .thank-text {
+  max-width: 650px;
+  margin: 50px auto 120px;
+  padding: 0 24px;
+
+  text-align: center;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #fff;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+
+  z-index: 3;
+}
+
+.thank-section .thank-text.visible {
+  opacity: 0.9;
+  transform: translateY(0);
+}
+
+/* MOBILE ONLY FOR THIS SECTION */
+@media (max-width: 768px) {
+  .thank-section .thank-text {
+    max-width: 88%;
+    margin: 40px auto 80px;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 0 12px;
+  }
+}
+
+
 
 /* =========================
   BACK TO TOP BUTTON
