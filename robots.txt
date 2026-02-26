@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vira-belialova.github.io/sitemap.xml
