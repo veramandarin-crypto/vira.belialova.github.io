@@ -591,7 +591,32 @@ showWallet.onclick = () => {
 };
 </script>
 
+  <script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > scrollHeight * 0.5) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
 
 
+<button id="backToTop" aria-label="Back to top">
+  ↑
+</button>
+  
 </body>
 </html>
