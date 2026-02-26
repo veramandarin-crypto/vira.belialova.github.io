@@ -24,10 +24,8 @@ body {
 }
 
 .support-section {
-  scroll-margin-top: 160px;
+  scroll-margin-top: 120px;
 }
-
-
 
 /* =========================
    THANK PHOTO (TITLE ONLY)
@@ -37,17 +35,17 @@ body {
 }
 
 /* =========================
-   THANK TEXT SECTION (SEPARATE)
+   THANK TEXT SECTION
 ========================= */
 .thank-text-section {
   background: #000;
-  padding: 80px 0;
+  padding: 80px 16px;
 }
 
 .thank-text {
   max-width: 650px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
 
   text-align: center;
   line-height: 1.8;
@@ -59,7 +57,6 @@ body {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* fade-in */
 .thank-text.visible {
   opacity: 0.9;
   transform: translateY(0);
@@ -68,19 +65,15 @@ body {
 /* MOBILE */
 @media (max-width: 768px) {
   .thank-text {
-    max-width: 88%;
+    max-width: 90%;
     font-size: 15px;
     line-height: 1.7;
-    padding: 0 12px;
   }
 
   .thank-text-section {
-    padding: 60px 0;
+    padding: 50px 12px;
   }
 }
-
-
-
 
 /* =========================
   BACK TO TOP BUTTON
@@ -111,7 +104,6 @@ body {
               border-color 0.3s ease;
 }
 
-/* hover — как у навигации */
 #backToTop:hover {
   background: #fff;
   color: #000;
@@ -128,51 +120,39 @@ body {
   opacity: 1;
 }
 
-
-
-
 /* =========================
  PAGE PRESENCE VIDEO
 ========================= */
 .presence-video {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.presence-video video {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  height: auto;
   display: block;
 }
 
+.presence-video video {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
 /* =========================
  PAGE PRESENCE
 ========================= */
-/* PRESENCE LAYOUT */
 .presence-content {
   background: #000;
   overflow: hidden;
   transition: max-height 0.6s ease;
 }
 
-/* основной контейнер */
 .presence-content > div {
-  max-width: 800px;
-  margin-left: 12%;   /* сдвигаем влево красиво */
-  margin-right: auto;
-  padding: 160px 0 120px; /* больше воздуха сверху и снизу */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 6% 80px;
 }
 
-/* отступы между секциями */
 .presence-content h2 {
-  margin-top: 100px;
-  margin-bottom: 30px;
+  margin-top: 70px;
+  margin-bottom: 24px;
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -182,28 +162,26 @@ body {
 }
 
 .presence-content p {
-  line-height: 1.9;
-  margin-bottom: 40px;
+  line-height: 1.8;
+  margin-bottom: 32px;
   font-size: 16px;
-  max-width: 650px; /* чтобы строки не были слишком длинные */
+  max-width: 700px;
 }
 
 .presence-content.active {
-  max-height: 1200px; /* хватит для видео */
   display: block;
 }
 
-/* grid блоки */
+/* grid */
 .presence-grid {
-  margin: 60px 0;
-  max-width: 650px;
+  margin: 40px 0;
+  max-width: 700px;
 }
 
-/* --- MOBILE --- */
+/* MOBILE */
 @media (max-width: 900px) {
   .presence-content > div {
-    margin: 0 auto;
-    padding: 120px 8% 80px;
+    padding: 100px 5% 60px;
   }
 
   .presence-content p,
@@ -214,24 +192,25 @@ body {
 
 /* PRESENCE PHOTO */
 .presence-visual {
-  margin: 80px 0;
+  margin: 50px 0;
   width: 100%;
 }
 
 .presence-visual img {
   width: 100%;
-  max-height: 600px;
+  height: auto;
   object-fit: cover;
-  display: block;
-  border-radius: 4px; /* опционально, если хочешь мягкие края */
+  border-radius: 4px;
 }
 
+/* =========================
+   DONATION & CONTROLS
+========================= */
 .qr-copy {
   cursor: pointer;
   display: inline-block;
 }
 
-/* CRYPTO COPY BUTTON */
 .copy-btn,
 .show-wallet {
   margin-top: 10px;
@@ -242,8 +221,7 @@ body {
   border-radius: 18px;
   font-size: 13px;
   cursor: pointer;
-  transition: 0.2s;
-  min-width: 140px;          
+  min-width: 140px;
   text-align: center;
 }
 
@@ -256,6 +234,15 @@ body {
   background: #fff;
   color: #000;
 }
+
+.donate-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .tab-content {
   display: none;
   text-align: center;
@@ -264,24 +251,10 @@ body {
 .tab-content.active {
   display: block;
 }
-.donate-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-}
-.tab-content p {
-  margin-bottom: 10px;
-}
-
-
-
 
 /* =========================
   NAVIGATION
 ========================= */
-/* бургер */
 .burger {
   display: none;
   background: transparent;
@@ -293,7 +266,6 @@ body {
   cursor: pointer;
 }
 
-/* кнопки (только кнопки, без контейнера) */
 .nav-links {
   display: flex;
   gap: 6px;
@@ -317,13 +289,12 @@ body {
   color: #000;
 }
 
-/* убираем фокус-бордер */
 .nav-links a,
 .burger {
   outline: none;
 }
 
-/* ===== АДАПТИВ ===== */
+/* MOBILE NAV */
 @media (max-width: 768px) {
 
   .nav-links {
@@ -332,10 +303,9 @@ body {
     gap: 8px;
 
     position: absolute;
-    top: 60px; /* ← регулируй если нужно */
-    left: 50%; /* центр относительно nav */
+    top: 60px;
+    left: 50%;
     transform: translateX(-50%);
-     
     align-items: center;
   }
 
@@ -354,8 +324,6 @@ body {
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 24px;
     padding: 10px 16px;
-
-    transition: all 0.2s ease;
   }
 
   .nav-links a:active {
@@ -366,17 +334,13 @@ body {
   .burger {
     display: inline-block;
   }
-
 }
-
-
-
 
 /* =========================
    DONATION SECTION
 ========================= */
 .support-section {
-  padding: 140px 10%;
+  padding: 120px 6%;
   text-align: center;
   background: #000;
 }
@@ -387,28 +351,27 @@ body {
 }
 
 .support-content h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
+  font-size: 32px;
+  margin-bottom: 24px;
   font-weight: 300;
 }
 
 .support-content p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.7;
-  opacity: 0.8;
-  margin-bottom: 40px;
+  opacity: 0.85;
+  margin-bottom: 32px;
 }
 
 .donate-button {
   display: inline-block;
-  padding: 14px 40px;
+  padding: 14px 36px;
   border: 1px solid #fff;
   background: #000;
   color: #fff;
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 2px;
-  transition: all 0.4s ease;
 }
 
 .donate-button:hover {
@@ -416,7 +379,7 @@ body {
   color: #000;
 }
 
-/* MODAL BACKDROP */
+/* MODAL */
 .donate-modal {
   display: none;
   position: fixed;
@@ -427,24 +390,13 @@ body {
   justify-content: center;
 }
 
-/* CONTENT */
 .donate-modal-content {
   background: #111;
-  padding: 30px;
+  padding: 24px;
   border-radius: 10px;
   text-align: center;
   max-width: 420px;
   width: 90%;
-  position: relative;
-}
-
-/* CLOSE */
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
 }
 
 /* TABS */
@@ -452,7 +404,7 @@ body {
   display: flex;
   gap: 8px;
   justify-content: center;
-  margin: 20px 0;
+  margin: 18px 0;
 }
 
 .tab-btn {
@@ -462,8 +414,6 @@ body {
   color: #fff;
   border-radius: 18px;
   font-size: 13px;
-  cursor: pointer;
-  transition: 0.2s ease;
 }
 
 .tab-btn.active {
@@ -475,17 +425,7 @@ body {
   background: rgba(255,255,255,0.15);
 }
 
-/* TAB CONTENT */
-.tab-content {
-  display: none;
-  text-align: center;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* PAYPAL LINK */
+/* LINKS */
 .donate-link {
   display: inline-block;
   margin-top: 10px;
@@ -494,7 +434,6 @@ body {
   border-radius: 20px;
   text-decoration: none;
   color: #fff;
-  transition: 0.2s;
 }
 
 .donate-link:hover {
@@ -502,7 +441,6 @@ body {
   color: #000;
 }
 
-/* QR */
 .donation-qr {
   width: 160px;
   height: 160px;
@@ -516,56 +454,56 @@ body {
   opacity: 0.7;
 }
 
-
-
-
 /* =========================
-   FULLSCREEN SECTIONS
+   FULLSCREEN SECTIONS (DESKTOP)
 ========================= */
 .section {
   position: relative;
   width: 100%;
-  min-height: 100svh;
-  height: 100svh;
+  min-height: 100vh;
   overflow: hidden;
 }
-
 
 .section img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Overlay */
+/* overlay */
 .overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.45);
-  transition: 0.5s ease;
-  pointer-events: none;
 }
 
-.section:hover .overlay {
-  background: rgba(0,0,0,0.25);
+/* text over image */
+.text-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 6%;
+  z-index: 2;
 }
 
-
-/* Hover (только для мышки) */
-@media (hover: hover) and (pointer: fine) {
-  .overlay {
-    background: rgba(0,0,0,0.5);
-  }
-
-  .section:hover .overlay {
-    background: rgba(0,0,0,0.25);
-  }
+.text-center h1 {
+  font-size: 42px;
 }
 
-/* =========================
-   FADE-IN
-========================= */
+.text-center h2 {
+  font-size: 30px;
+}
+
+.text-center p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* FADE-IN */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -578,358 +516,55 @@ body {
 }
 
 /* =========================
-   TEXT OVER IMAGE
-========================= */
-.text-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  max-width: 80%;
-  z-index: 2;
-}
-
-.text-center h1 {
-  font-weight: 300;
-  letter-spacing: 2px;
-  font-size: 48px;
-}
-
-.text-center h2 {
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 32px;
-}
-
-.text-center p {
-  margin: 0.9em 0;
-  line-height: 1.6;
-}
-
-/* =========================
-   VIDEO + TEXT SECTION
+   VIDEO + TEXT
 ========================= */
 .video-text-section {
-  width: 100%;
   background: #000;
-  padding: 100px 10%;
+  padding: 80px 6%;
 }
 
 .video-text-container {
   display: flex;
-  gap: 60px;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
-  justify-content: space-between;
 }
 
 .video-side,
 .text-side {
-  flex: 0 0 50%;
-  width: 50%;
+  flex: 1;
 }
 
-/* Зеркальная версия (ПК) */
-.video-text-section.reverse .video-text-container {
-  flex-direction: row-reverse;
-}
-
-/* Видео */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Текст */
-.text-side h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.text-side p {
-  font-size: 18px;
-  line-height: 1.6;
-  opacity: 0.85;
-}
-
-/* =========================
-   PHOTO 3 SECTION
-========================= */
-.photo3-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 60px 10%;
-  background: #000;
-}
-
-.photo3-section .photo3-side,
-.photo3-section .text3-side {
-  flex: 0 0 50%;
-  width: 50%;
-}
-
-.photo3-section img {
-  width: 100%;
-  max-height: 600px;
-  object-fit: cover;
-  display: block;
-}
-
-/* =========================
-   PHOTO 4 SECTION (contain)
-========================= */
-.photo4-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
-  height: 100vh;
-}
-
-.photo4-section img {
-  max-width: 100%;
-  max-height: 100vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-/* =========================
-   SPLIT PHOTO 12
-========================= */
-
-.split-photo-section {
-  min-height: 120vh;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.split-photo {
-  position: relative;
-  width: 90vw;
-  max-width: 900px;
-  aspect-ratio: 1 / 1;
-  overflow: hidden; /* важно */
-}
-
-.split-photo img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  z-index: 1;
-}
-
-/* Чёрные маски */
-.slice {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 25%;
-  background: #000;
-  pointer-events: none;
-
-  transition: transform 1s ease, opacity 1s ease;
-  z-index: 2;
-}
-
-.slice1 { top: 0%; }
-.slice2 { top: 25%; }
-.slice3 { top: 50%; }
-.slice4 { top: 75%; }
-
-/* когда JS добавляет visible — маска уезжает вверх */
-.slice.visible {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-
-
-/* =========================
-   FULLSCREEN VIDEO
-========================= */
-.video-full-section {
-  width: 100%;
-  background: #000;
-  padding: 0;
-}
-
-.video-full-section .video-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-}
-
-.video-full-section .video-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* =========================
-   TWO VIDEOS SIDE BY SIDE
-========================= */
-.video-two-section {
-  width: 100%;
-  background: #000;
-  padding: 100px 10%;
-}
-
-.video-two-container {
-  display: flex;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: stretch;
-}
-
-.video-two-container .video-side {
-  flex: 0 0 50%;
-  width: 50%;
-}
-
-.video-two-container .video-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-}
-
-.video-two-container .video-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background: #000;
-  padding: 40px;
-  text-align: center;
-}
-.socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-}
-
-
-.socials a {
-  color: #fff;
-  font-size: 22px;
-  transition: 0.3s ease;
-  text-decoration: none;
-  line-height: 1; /* ВАЖНО */
-}
-
-.socials a i {
-  display: block; /* убирает inline baseline-линию */
-}
-.socials a:hover {
-  color: #aaa;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 @media (max-width: 768px) {
 
-  .text-center {
-    width: 95%;
-    max-width: 95%;
-    padding: 0 10px;
+  .section {
+    min-height: auto;
   }
 
-  .text-center h1 { font-size: 28px; }
-  .text-center h2 { font-size: 20px; }
-  .text-center p  { font-size: 16px; }
+  .photo2-section {
+    padding: 0;
+  }
 
-  /* Видео + текст */
+  .text-center {
+    position: absolute;
+  }
+
   .video-text-container {
-    flex-direction: column !important;
-    gap: 30px;
+    flex-direction: column;
   }
 
   .video-side,
   .text-side {
-    width: 100% !important;
-    flex: none !important;
+    width: 100%;
   }
 
   .text-side {
     text-align: center;
   }
 
-  .text-side h2 { font-size: 28px; }
-  .text-side p  { font-size: 16px; }
-
-  /* Фото2 */
-  .photo2-section img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .photo2-section {
-    height: auto;
-  }
-
-  .photo2-section .overlay {
-    height: 100%;
-  }
-
-  /* Фото3 */
-  .photo3-section {
-    flex-direction: column;
-    padding: 30px 5%;
-  }
-
-  .photo3-section .photo3-side,
-  .photo3-section .text3-side {
-    width: 100%;
-    flex: none;
-  }
-
-  .text3-side {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  /* Фото4 */
-  .photo4-section img {
-    max-height: 85vh;
-  }
-
-  /* Видео два */
-  .video-two-container {
-    flex-direction: column;
-  }
-
-  .video-two-container .video-side {
-    width: 100%;
+  .presence-visual {
+    margin: 30px 0;
   }
 }
