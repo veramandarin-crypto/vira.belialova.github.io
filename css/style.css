@@ -944,3 +944,43 @@ footer {
     width: 100%;
   }
 }
+
+/* =========================
+   MOBILE FIX 
+========================= */
+
+@media (max-width: 768px) {
+
+  /* Фото секции не растягиваются на лишний экран */
+  .section.photo2-section {
+    min-height: auto;
+    height: auto;
+  }
+
+  .photo2-section {
+    position: relative;
+  }
+
+  .photo2-section picture,
+  .photo2-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ВАЖНО — чтобы 16:9 не тянуло */
+  .photo2-section img {
+    object-fit: cover;
+  }
+
+  .photo2-section .overlay {
+    position: absolute;
+    inset: 0;
+  }
+
+  .video-text-section {
+    padding: 50px 20px;
+  }
+
+}
+
