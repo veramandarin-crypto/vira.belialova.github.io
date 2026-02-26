@@ -32,34 +32,45 @@ body {
 ========================= */
 .thank-text {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 
-  max-width: 650px;
-  margin: 40px auto 0;
-  padding: 0 20px 80px;
+  max-width: 620px;
+  margin: 40px auto 80px;
+  padding: 0 24px;
 
   text-align: center;
   line-height: 1.8;
   font-size: 16px;
   color: #fff;
-  opacity: 0;
 
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  opacity: 0;
   transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-/* когда появится fade-in.visible */
+/* fade-in visible */
 .thank-text.visible {
   opacity: 0.9;
   transform: translateY(0);
 }
 
-/* MOBILE */
+/* чтобы следующий видос не перекрывал */
+.section.photo2-section {
+  padding-bottom: 120px;
+}
+
+/* MOBILE (iPhone friendly) */
 @media (max-width: 768px) {
   .thank-text {
-    max-width: 90%;
-    padding: 0 16px 60px;
+    max-width: 88%;
+    padding: 0 12px 60px;
     font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 60px;
+  }
+
+  .section.photo2-section {
+    padding-bottom: 80px;
   }
 }
 
