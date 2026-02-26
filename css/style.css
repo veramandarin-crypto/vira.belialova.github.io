@@ -30,13 +30,22 @@ body {
 /* =========================
  THANK TEXT
 ========================= */
+.thank-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding-bottom: 120px;
+}
+
 .thank-text {
   position: relative;
   z-index: 4;
 
   max-width: 620px;
-  margin: 40px auto 80px;
   padding: 0 24px;
+  margin-top: 160px;
 
   text-align: center;
   line-height: 1.8;
@@ -48,31 +57,30 @@ body {
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-/* fade-in visible */
 .thank-text.visible {
   opacity: 0.9;
   transform: translateY(0);
 }
 
-/* чтобы следующий видос не перекрывал */
-.section.photo2-section {
-  padding-bottom: 120px;
-}
-
-/* MOBILE (iPhone friendly) */
+/* MOBILE — iPhone friendly */
 @media (max-width: 768px) {
-  .thank-text {
-    max-width: 88%;
-    padding: 0 12px 60px;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 60px;
-  }
-
-  .section.photo2-section {
+  .thank-section {
     padding-bottom: 80px;
   }
+
+  .thank-text {
+    max-width: 88%;
+    padding: 0 12px;
+    margin-top: 120px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .text-center h1 {
+    font-size: 26px;
+  }
 }
+
 
 
 /* =========================
