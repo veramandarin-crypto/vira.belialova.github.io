@@ -175,9 +175,9 @@ body {
 /* основной контейнер */
 .presence-content > div {
   max-width: 800px;
-  margin-left: 12%;   /* сдвигаем влево красиво */
+  margin-left: 12%;
   margin-right: auto;
-  padding: 160px 0 120px; /* больше воздуха сверху и снизу */
+  padding: 160px 0 120px;
 }
 
 /* отступы между секциями */
@@ -196,11 +196,11 @@ body {
   line-height: 1.9;
   margin-bottom: 40px;
   font-size: 16px;
-  max-width: 650px; /* чтобы строки не были слишком длинные */
+  max-width: 650px;
 }
 
 .presence-content.active {
-  max-height: 1200px; /* хватит для видео */
+  max-height: 1200px;
   display: block;
 }
 
@@ -234,7 +234,7 @@ body {
   max-height: 600px;
   object-fit: cover;
   display: block;
-  border-radius: 4px; /* опционально, если хочешь мягкие края */
+  border-radius: 4px;
 }
 
 .qr-copy {
@@ -304,7 +304,7 @@ body {
   cursor: pointer;
 }
 
-/* кнопки (только кнопки, без контейнера) */
+
 .nav-links {
   display: flex;
   gap: 6px;
@@ -343,8 +343,8 @@ body {
     gap: 8px;
 
     position: absolute;
-    top: 60px; /* ← регулируй если нужно */
-    left: 50%; /* центр относительно nav */
+    top: 60px; 
+    left: 50%; 
     transform: translateX(-50%);
      
     align-items: center;
@@ -642,7 +642,7 @@ body {
   width: 50%;
 }
 
-/* Зеркальная версия (ПК) */
+
 .video-text-section.reverse .video-text-container {
   flex-direction: row-reverse;
 }
@@ -765,7 +765,7 @@ body {
 .slice3 { top: 50%; }
 .slice4 { top: 75%; }
 
-/* когда JS добавляет visible — маска уезжает вверх */
+/* когда JS добавляет visible - маска уезжает вверх */
 .slice.visible {
   transform: translateY(-100%);
   opacity: 0;
@@ -857,7 +857,7 @@ footer {
 }
 
 .socials a i {
-  display: block; /* убирает inline baseline-линию */
+  display: block; 
 }
 .socials a:hover {
   color: #aaa;
@@ -968,7 +968,7 @@ footer {
     height: auto;
   }
 
-  /* ВАЖНО — чтобы 16:9 не тянуло */
+  /* чтобы 16:9 не тянуло */
   .photo2-section img {
     object-fit: cover;
   }
